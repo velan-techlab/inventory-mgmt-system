@@ -15,5 +15,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        run : |
-           ls -la
+      - name: run command
+        run: |
+            ls -la
+            echo "Running inventory service CI workflow"
