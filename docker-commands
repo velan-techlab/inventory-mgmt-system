@@ -1,0 +1,12 @@
+docker network create micronet
+
+docker run -d   \
+  --name postgres-server \
+  --network micronet \
+  -e POSTGRES_USER=docker \
+  -e POSTGRES_PASSWORD=docker \
+  -e POSTGRES_DB=mydb \
+  -p 5432:5432 \
+  postgres
+
+docker run -d --name inventory --network micronet  -e DB_HOST=postgres-server -p 8080:8080 inventory-service:latest
