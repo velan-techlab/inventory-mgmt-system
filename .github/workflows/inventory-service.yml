@@ -26,4 +26,7 @@ jobs:
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
-          tags: velantechlab/inventory-service:latest     
+          tags: velantechlab/inventory-service:latest
+      - name: run command3
+        run: |
+            ls -la
