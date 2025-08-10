@@ -8,10 +8,12 @@ on:
     paths:
       - 'inventory-service/**'
       - '.github/workflows/inventory-service.yml'
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: inventory-service
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
