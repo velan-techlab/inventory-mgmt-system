@@ -20,3 +20,4 @@ create Table purchase_order (
     quantity int not null,
     foreign key (item_id) references inventory(item_id)
 )
+
