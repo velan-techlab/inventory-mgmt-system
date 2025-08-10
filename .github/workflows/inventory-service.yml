@@ -26,7 +26,6 @@ jobs:
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
-          context: ./inventory-service
           file: ./dockerfile
           push: true
           tags: velantechlab/inventory-service:latest     
