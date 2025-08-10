@@ -17,18 +17,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: run command
-        run: |
-            ls -la
-      - name: run command1
-        run: |
-            ls -la
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
           tags: velantechlab/inventory-service:latest
-      - name: run command3
-        run: |
-            ls -la
