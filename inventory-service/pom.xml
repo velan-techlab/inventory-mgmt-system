@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.service</groupId>
 	<artifactId>inventory</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>inventory</name>
 	<description>Simple Inventory Managment</description>
 	<url/>
