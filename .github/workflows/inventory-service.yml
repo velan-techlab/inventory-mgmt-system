@@ -21,3 +21,9 @@ jobs:
         run: |
             ls -la
             echo "Running inventory service CI workflow"
+      - name: Docker Build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: velantechlab/inventory-service:latest     
