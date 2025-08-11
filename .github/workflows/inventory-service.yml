@@ -15,6 +15,9 @@ jobs:
       run:
         working-directory: inventory-service
     steps:
+      - name: print variable
+        run: |
+          echo "$GITHUB_ENV"
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Docker Build
