@@ -26,3 +26,4 @@ jobs:
       - name: print env
         run : |
            env | sort
+           ls -a
