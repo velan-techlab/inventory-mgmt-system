@@ -25,4 +25,4 @@ jobs:
           tags: velantechlab/inventory-service:latest
       - name: print env
         run : |
-           echo "${GITHUB_ENV}"
+           env | sort
