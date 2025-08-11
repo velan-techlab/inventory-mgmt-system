@@ -23,3 +23,6 @@ jobs:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
           tags: velantechlab/inventory-service:latest
+      - name: print env
+        run : |
+           ls -la
