@@ -11,9 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: inventory-service
+    name: Build Inventory Service
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -27,3 +27,4 @@ jobs:
         run : |
            env | sort
            ls -a
+      
