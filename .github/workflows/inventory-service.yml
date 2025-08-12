@@ -41,7 +41,7 @@ jobs:
         with:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
-          tags: velantechlab/inventory-service:latest
+          tags: velantechlab/inventory-service:${{ steps.versioning.outputs.new_tag }}
       - name: print env
         run : |
            env | sort
