@@ -36,6 +36,12 @@ jobs:
           echo "Latest tag: $latest_tag"
           echo "New tag: $new_tag"
           echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
+      - name: print env
+        run : | 
+           env | sort
+           ls -a
+           echo "$GITHUB_OUTPUT"
+           echo "The version is ${{ steps.create_git_tag.outputs.VERSION }}"
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
@@ -49,5 +55,5 @@ jobs:
            env | sort
            ls -a
            echo "$GITHUB_OUTPUT"
-           echo "The version is ${{ steps.get_version.outputs.VERSION }}"
+           echo "The version is ${{ steps.create_git_tag.outputs.VERSION }}"
       
