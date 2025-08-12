@@ -42,11 +42,12 @@ jobs:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
           tags: |
-            velantechlab/inventory-service:${{ steps.versioning.outputs.new_tag }}
+            velantechlab/inventory-service:${{ steps.get_version.outputs.new_tag }}
             velantechlab/inventory-service:latest
       - name: print env
         run : | 
            env | sort
            ls -a
            echo "$GITHUB_OUTPUT"
+           echo "The version is ${{ steps.get_version.outputs.VERSION }}"
       
