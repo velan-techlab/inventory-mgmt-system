@@ -41,9 +41,11 @@ jobs:
         with:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
-          tags: velantechlab/inventory-service:${{ steps.versioning.outputs.new_tag }}
+          tags: |
+            velantechlab/inventory-service:${{ steps.versioning.outputs.new_tag }}
+            velantechlab/inventory-service:latest
       - name: print env
-        run : |
+        run : | 
            env | sort
            ls -a
            echo "$GITHUB_OUTPUT"
