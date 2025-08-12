@@ -17,6 +17,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0  # Fetch all history for accurate versioning
+          show-tags: true  # Show tags in the checkout
+          show-progress: true
+          fetch-tags: true  # Fetch tags to ensure they are available for versioning
       - name: create git tag
         run : |
           # Fetch all tags to ensure accurate versioning
