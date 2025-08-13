@@ -10,6 +10,7 @@ on:
       - '.github/workflows/inventory-service.yml'
 jobs:
   build:
+    environment: VELAN-TECH-LAB
     runs-on: ubuntu-latest
     name: Build Inventory Service
     permissions:
