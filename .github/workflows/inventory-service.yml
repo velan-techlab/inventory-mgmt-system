@@ -43,14 +43,20 @@ jobs:
            ls -a
            echo "$GITHUB_OUTPUT"
            echo "The version is ${{ steps.create_git_tag.outputs.VERSION }}"
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.REPO_USERNAME }}
+          password: ${{ secrets.REPO_PASSWORD }}
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
           context: ./inventory-service
           file: ./inventory-service/dockerfile
+          push: true
           tags: |
-            velantechlab/inventory-service:latest
-            velantechlab/inventory-service:${{ steps.create_git_tag.outputs.new_tag }}
+            ${{ secrets.REPO_NAME }}/inventory-service:latest
+            ${{ secrets.REPO_NAME }}/inventory-service:${{ steps.create_git_tag.outputs.new_tag }}
       - name: print env
         run : | 
            env | sort
